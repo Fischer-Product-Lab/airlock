@@ -1,0 +1,16 @@
+/node_modules
+/.next/
+/out/
+/build
+/coverage
+.DS_Store
+Thumbs.db
+*.log
+*.pem
+/notes
+.env
+.env*
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+.pnpm-debug.log*
