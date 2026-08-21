@@ -42,7 +42,7 @@ AgentOps already asks whether an AI initiative is safe to launch. Airlock asks w
 ## 5. Functional requirements
 
 1. **Why Airlock (`/why`)** — what it is, why it exists, how the verdict is computed, six scenes, suite links.
-2. **Range board (`/`)** — every cell with a computed band. Headline: cells that would have been allowed to start (Sealed or Conditional). Filters by harness, model, sponsor.
+2. **Range board (`/demo`)** — every cell with a computed band. Headline: cells that would have been allowed to start (Sealed or Conditional). Filters by harness, model, sponsor. Public landing is `/`.
 3. **Cell (`/cells/[id]`)** — identity, intended vs. probed egress, score, gates, disabled kill switch, tools, time-aware timeline when present.
 4. **Collision desk (`/collisions`)** — fictional identifiers vs. stored registry results. `harborline.com` is the live row.
 5. **Incident strip (`/incidents`)** — what left, who was reached, detected or not, who owns IR.

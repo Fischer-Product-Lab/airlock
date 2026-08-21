@@ -1,9 +1,18 @@
 import type { Metadata } from "next";
-import { Fraunces, Hanken_Grotesk } from "next/font/google";
-import { AppShell } from "@/components/AppShell";
-import { AS_OF } from "@/lib/containment";
-import { formatUtc } from "@/lib/format";
+import { Fraunces, Geist, Geist_Mono, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
+
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist",
+  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+  display: "swap",
+});
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -32,10 +41,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${hanken.variable}`}>
-      <body className="bg-canvas font-sans text-ink antialiased">
-        <AppShell frozenClock={formatUtc(AS_OF)}>{children}</AppShell>
-      </body>
+    <html
+      lang="en"
+      className={`${geist.variable} ${geistMono.variable} ${fraunces.variable} ${hanken.variable}`}
+    >
+      <body className="min-h-dvh">{children}</body>
     </html>
   );
 }

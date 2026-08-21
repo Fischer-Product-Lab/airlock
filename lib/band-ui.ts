@@ -2,8 +2,8 @@ import type { Band, GateEffect, KillSwitchState, Verdict } from "./types";
 
 /** SVG stroke hex. Tailwind classes cannot paint SVG strokes. */
 export const BAND_HEX: Record<Band, string> = {
-  Sealed: "#c9a45c",
-  Conditional: "#e3c894",
+  Sealed: "#c4a35a",
+  Conditional: "#f4efe4",
   Leaking: "#e8736f",
   Stopped: "#e8736f",
 };
