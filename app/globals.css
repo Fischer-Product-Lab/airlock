@@ -1,25 +1,46 @@
 @import "tailwindcss";
 
+/*
+  Airlock design system — Fischer Product Lab.
+  Product chrome keeps Hanken + Fraunces. The landing face is Geist.
+  See DESIGN.md for the locked language and the kill list.
+*/
 @theme {
-  --font-display: var(--font-fraunces), ui-serif, Georgia, "Times New Roman",
-    serif;
-  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
-
-  --color-canvas: #0b0f17;
+  --color-navy: #0b1220;
+  --color-canvas: #0b1220;
   --color-surface: #0f1521;
   --color-surface-2: #141c2b;
   --color-hairline: #1e2738;
   --color-hairline-strong: #2b3754;
-  --color-ink: #f5efe1;
-  --color-ivory: #f5efe1;
+
+  --color-ivory: #f4efe4;
+  --color-ink: #f4efe4;
   --color-ink-muted: #a7aebc;
   --color-ink-faint: #6c7689;
-  --color-gold: #c9a45c;
+
+  --color-gold: #c4a35a;
   --color-gold-soft: #e3c894;
-  --color-sealed: #c9a45c;
-  --color-conditional: #e3c894;
+  --color-sealed: #c4a35a;
+  --color-conditional: #f4efe4;
   --color-data: #9cc9ff;
   --color-danger: #e8736f;
+
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, "Times New Roman",
+    serif;
+  --font-marketing: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "IBM Plex Mono", monospace;
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 html,
@@ -28,8 +49,9 @@ body {
 }
 
 body {
-  background: var(--color-canvas);
+  background-color: var(--color-navy);
   color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
@@ -40,4 +62,123 @@ body {
 :focus-visible {
   outline: 2px solid var(--color-gold);
   outline-offset: 2px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Marketing landing — one light, grain, four type sizes                      */
+/* -------------------------------------------------------------------------- */
+
+.marketing {
+  --type-display: clamp(3.25rem, 9vw, 6.25rem);
+  --type-title: clamp(1.375rem, 2.4vw, 1.75rem);
+  --type-body: 1.0625rem;
+  --type-meta: 0.75rem;
+  position: relative;
+  isolation: isolate;
+  min-height: 100dvh;
+  font-family: var(--font-marketing);
+  color: var(--color-ivory);
+  background-color: var(--color-navy);
+}
+
+.marketing-type-display {
+  font-size: var(--type-display);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  font-weight: 600;
+}
+
+.marketing-type-title {
+  font-size: var(--type-title);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+}
+
+.marketing-type-body {
+  font-size: var(--type-body);
+  line-height: 1.55;
+}
+
+.marketing-type-meta {
+  font-family: var(--font-mono);
+  font-size: var(--type-meta);
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Single light event — gold/ivory pool sitting on the product window */
+.marketing-light {
+  position: absolute;
+  top: -28%;
+  left: 50%;
+  z-index: 0;
+  width: min(56rem, 100vw);
+  height: 70%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 58% 62% at 50% 38%,
+    rgba(244, 239, 228, 0.28) 0%,
+    rgba(196, 163, 90, 0.2) 26%,
+    rgba(196, 163, 90, 0.07) 52%,
+    transparent 70%
+  );
+}
+
+.marketing-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  opacity: 0.32;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+
+.product-window {
+  box-shadow:
+    0 0 0 1px rgba(196, 163, 90, 0.42),
+    0 0 48px -10px rgba(196, 163, 90, 0.28),
+    0 -28px 90px -24px rgba(244, 239, 228, 0.1),
+    0 48px 90px -28px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes marketing-rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.marketing-rise {
+  animation: marketing-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.marketing-rise-delay-1 {
+  animation-delay: 0.08s;
+}
+.marketing-rise-delay-2 {
+  animation-delay: 0.16s;
+}
+.marketing-rise-delay-3 {
+  animation-delay: 0.28s;
+}
+.marketing-rise-delay-4 {
+  animation-delay: 0.42s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marketing-rise,
+  .marketing-rise-delay-1,
+  .marketing-rise-delay-2,
+  .marketing-rise-delay-3,
+  .marketing-rise-delay-4 {
+    animation: none;
+  }
 }

@@ -22,8 +22,9 @@ Tests in `lib/containment.test.ts` lock the six demo scenes at `AS_OF` (`17 Aug 
 
 | Route | Screen | Purpose |
 | --- | --- | --- |
+| `/` | **Landing** | Cinematic portfolio surface. A real cell window under one light. |
 | `/why` | **Why Airlock** | What it is, why it exists, how the verdict is computed. |
-| `/` | **Range board** | How many cells would have been allowed to start (Sealed or Conditional) at the as-of time. |
+| `/demo` | **Range board** | How many cells would have been allowed to start (Sealed or Conditional) at the as-of time. |
 | `/cells/[id]` | **Cell** | One evaluation: identity, intended vs. probed egress, gates, kill switch, tools. |
 | `/collisions` | **Collision desk** | Fictional identifiers against a stored registry. A CTF name that resolves is live. |
 | `/incidents` | **Incident strip** | What left the cell, who was reached, whether they detected it, who owns IR. |
@@ -83,7 +84,7 @@ pnpm test
 pnpm build
 ```
 
-Open `http://localhost:3000`. The as-of time is `17 Aug 2026, 18:00 UTC`.
+Open `http://localhost:3000` for the landing, or `http://localhost:3000/demo` for the range board. The as-of time is `17 Aug 2026, 18:00 UTC`.
 
 ---
 

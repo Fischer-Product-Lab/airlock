@@ -50,7 +50,7 @@ pnpm lint
 pnpm build
 ```
 
-Expected: 45 tests, static routes for `/`, `/why`, `/collisions`, `/incidents`, `/harnesses`, `/about` (redirect), and 14 cell pages.
+Expected: 45 tests, static routes for `/` (cinematic landing), `/demo` (range board), `/why`, `/collisions`, `/incidents`, `/harnesses`, `/about` (redirect), and 14 cell pages.
 
 ## Deploy
 

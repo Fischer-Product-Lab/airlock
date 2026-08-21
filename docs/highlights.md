@@ -17,7 +17,8 @@ Eval harnesses were treated as disposable. In early August 2026 several labs pub
 
 ## What it does
 
-- **Range board** — how many cells would have been allowed to start (Sealed or Conditional) at the as-of time.
+- **Landing (`/`)** — cinematic portfolio surface. One light over a real cell window.
+- **Range board (`/demo`)** — how many cells would have been allowed to start (Sealed or Conditional) at the as-of time.
 - **Cell** — identity, intended vs. probed egress, gates, disabled kill switch, tools.
 - **Collision desk** — fictional names against a stored registry. `harborline.com` is live. `northwind-ledger.test` is clean.
 - **Incident strip** — what left, who was reached, whether they detected it, who owns IR.

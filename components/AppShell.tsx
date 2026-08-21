@@ -15,7 +15,7 @@ import {
 
 const NAV = [
   { href: "/why", label: "Why Airlock", icon: BookOpen },
-  { href: "/", label: "Range board", icon: Shield },
+  { href: "/demo", label: "Range board", icon: Shield },
   { href: "/collisions", label: "Collision desk", icon: Unplug },
   { href: "/incidents", label: "Incident strip", icon: FolderKanban },
   { href: "/harnesses", label: "Harness scorecard", icon: ClipboardList },
@@ -23,15 +23,16 @@ const NAV = [
 
 function deskTitle(pathname: string): string {
   if (pathname === "/why" || pathname === "/about") return "Why Airlock";
-  if (pathname === "/" || pathname.startsWith("/cells/")) return "Range board";
+  if (pathname === "/demo" || pathname.startsWith("/cells/")) return "Range board";
   const match = NAV.find(
-    (item) => item.href !== "/" && pathname.startsWith(item.href),
+    (item) => item.href !== "/demo" && pathname.startsWith(item.href),
   );
   return match?.label ?? "Airlock";
 }
 
 function navActive(pathname: string, href: string): boolean {
-  if (href === "/") return pathname === "/" || pathname.startsWith("/cells/");
+  if (href === "/demo")
+    return pathname === "/demo" || pathname.startsWith("/cells/");
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
@@ -221,20 +222,20 @@ function AirlockMark() {
         cy="14"
         r="11"
         fill="none"
-        stroke="#c9a45c"
+        stroke="#c4a35a"
         strokeWidth="1.25"
       />
       <circle
         cx="14"
         cy="14"
         r="6.5"
-        fill="rgba(201,164,92,0.12)"
-        stroke="#c9a45c"
+        fill="rgba(196,163,90,0.12)"
+        stroke="#c4a35a"
         strokeWidth="1.25"
       />
       <path
         d="M14 8.2v11.6M8.2 14h11.6"
-        stroke="#c9a45c"
+        stroke="#c4a35a"
         strokeWidth="1.1"
         opacity="0.55"
       />

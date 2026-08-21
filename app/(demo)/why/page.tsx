@@ -333,7 +333,7 @@ export default function WhyPage() {
           The data is synthetic. The app does not probe DNS or registries.
           The scenes let you click through failure modes that were in the
           news without replaying them. Start on the{" "}
-          <Link href="/" className="text-data underline-offset-4 hover:underline">
+          <Link href="/demo" className="text-data underline-offset-4 hover:underline">
             Range board
           </Link>
           . The large number is how many cells would have been allowed to
