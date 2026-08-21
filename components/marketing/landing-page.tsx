@@ -53,7 +53,7 @@ export function LandingPage() {
               Portfolio demonstration · read-only · synthetic data
             </p>
             <h1 className="marketing-type-display marketing-rise marketing-rise-delay-1 mt-6 max-w-5xl text-ivory">
-              Is the evaluation
+              Is the breach
               <br />
               contained while we
               <br />
