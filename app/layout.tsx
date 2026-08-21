@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s · Airlock",
   },
   description:
-    "Is the evaluation contained while we measure it? Read-only demo on synthetic data.",
+    "Is the breach contained while we measure it? Read-only demo on synthetic data.",
 };
 
 export default function RootLayout({
